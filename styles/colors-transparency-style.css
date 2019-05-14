@@ -1,0 +1,23 @@
+p {
+    height: 50px;
+    width: 350px;
+  }
+  
+  /* Transparent red */
+  p:nth-child(1) {
+    background-color: rgba(255,0,0,0.5);
+    position: relative;
+    top: 30px;
+    left: 50px;
+  }
+  
+  /* Transparent blue */
+  p:nth-child(2) {
+    background-color: hsla(240,100%,50%,0.5);
+  }
+
+  /* Red with opacity */
+p:nth-child(3) {
+    background-color: rgb(255,0,0);
+    opacity: 0.5;
+  }
