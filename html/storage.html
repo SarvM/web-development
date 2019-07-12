@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <input type="text" id="field">
+        <script>
+			localStorage.setItem("class","HTML");
+			sessionStorage.setItem("class","HTML");
+			var locValue = localStorage.getItem("class");
+			console.log(locValue);
+
+
+
+            if(localStorage){
+                // Store data
+                localStorage.setItem("first_name", "zen");
+                
+                // Retrieve data
+                alert("Hi, " + localStorage.getItem("first_name"));
+            } else{
+                alert("Sorry, your browser do not support local storage.");
+            }
+            // Get the text field that we're going to track
+            let field = document.getElementById("field");
+            
+            // See if we have an autosave value
+            // (this will only happen if the page is accidentally refreshed)
+            if (sessionStorage.getItem("autosave")) {
+            // Restore the contents of the text field
+            field.value = sessionStorage.getItem("autosave");
+            }
+            
+            // Listen for changes in the text field
+            field.addEventListener("change", function() {
+            // And save the results into the session storage object
+            sessionStorage.setItem("autosave", field.value);
+            });
+        </script>        
+
+    </body>
+</html>
